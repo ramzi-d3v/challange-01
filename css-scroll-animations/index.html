@@ -1,0 +1,128 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="./style.css">
+<!-- Scroll progress -->
+<div class="scroll-indicator"></div>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="logo">Pixel <span>Perfect</span></div>
+  <span class="nav-tag">CSS Scroll Animations</span>
+</nav>
+
+<!-- Hero 1 -->
+<section class="hero hero-1" data-label="CSS">
+  <span class="hero-eyebrow">No JavaScript</span>
+  <h1 class="hero-title">CSS-Only<br /><span>Scroll</span><br />Trigger</h1>
+</section>
+
+<!-- Hero 2 -->
+<section class="hero hero-2" data-label="Scroll">
+  <span class="hero-eyebrow">animation-timeline: view()</span>
+  <h1 class="hero-title">Scroll-Driven<br /><span>Animations</span></h1>
+  <p class="hero-subtitle">Experience stunning entrance effects without writing a single line of JavaScript. Pure CSS animation timelines.</p>
+</section>
+
+<!-- 01 Fade In -->
+<section class="demo-section">
+  <span class="animation-eyebrow">01</span>
+  <h2 class="animation-title">Fade-In Box</h2>
+  <p class="animation-subtitle">Entry 0% — Cover 50%</p>
+  <div class="demo-box fade-in-box"></div>
+</section>
+
+<!-- 02 Slide Left -->
+<section class="demo-section">
+  <span class="animation-eyebrow">02</span>
+  <h2 class="animation-title">Slide-In Left</h2>
+  <p class="animation-subtitle">Entry 0% — Cover 50%</p>
+  <div class="demo-box slide-in-left"></div>
+</section>
+
+<!-- 03 Scale Up -->
+<section class="demo-section">
+  <span class="animation-eyebrow">03</span>
+  <h2 class="animation-title">Scale-Up Box</h2>
+  <p class="animation-subtitle">Entry 0% — Cover 50%</p>
+  <div class="demo-box scale-up-box"></div>
+</section>
+
+<!-- 04 Rotate In -->
+<section class="demo-section">
+  <span class="animation-eyebrow">04</span>
+  <h2 class="animation-title">Rotate-In Box</h2>
+  <p class="animation-subtitle">Entry 0% — Cover 50%</p>
+  <div class="demo-box rotate-in-box"></div>
+</section>
+
+<!-- 05 Staggered -->
+<section class="demo-section">
+  <span class="animation-eyebrow">05</span>
+  <h2 class="animation-title">Staggered Animation</h2>
+  <p class="animation-subtitle">Sequential delay — nth-child</p>
+  <div class="staggered-parent">
+    <div class="staggered-box" data-n="01"></div>
+    <div class="staggered-box" data-n="02"></div>
+    <div class="staggered-box" data-n="03"></div>
+  </div>
+</section>
+
+<!-- 06 Zoom Text -->
+<section class="demo-section">
+  <span class="animation-eyebrow">06</span>
+  <h2 class="animation-title">Zoom-Out Box</h2>
+  <p class="animation-subtitle">Entry 0% — Cover 50%</p>
+  <div class="demo-box zoom-text">ZOOM</div>
+</section>
+
+<!-- 07 Blur In -->
+<section class="demo-section">
+  <span class="animation-eyebrow">07</span>
+  <h2 class="animation-title">Blur-In Image</h2>
+  <p class="animation-subtitle">Entry 0% — Cover 40%</p>
+  <div class="demo-box blur-image"></div>
+</section>
+
+<!-- 08 Flip Card -->
+<section class="demo-section">
+  <span class="animation-eyebrow">08</span>
+  <h2 class="animation-title">Flip Card</h2>
+  <p class="animation-subtitle">Entry 0% — Cover 50%</p>
+  <div class="demo-box flip-card">FLIP</div>
+</section>
+
+<!-- 09 Reveal -->
+<section class="demo-section">
+  <span class="animation-eyebrow">09</span>
+  <h2 class="animation-title">Reveal Section</h2>
+  <p class="animation-subtitle">Entry 10% — Cover 60%</p>
+  <div class="demo-box reveal-section"></div>
+</section>
+
+<!-- 10 Rotate & Scale -->
+<section class="demo-section">
+  <span class="animation-eyebrow">10</span>
+  <h2 class="animation-title">Rotate & Scale</h2>
+  <p class="animation-subtitle">Entry 0% — Cover 50%</p>
+  <div class="demo-box rotate-logo">360°</div>
+</section>
+
+<!-- 11 Progress -->
+<section class="demo-section progress-section">
+  <span class="animation-eyebrow">11</span>
+  <h2 class="animation-title">Scroll Progress</h2>
+  <p class="animation-subtitle">Linked to scroll(root block)</p>
+  <div class="progress-demo">
+    <div class="progress-label-row">
+      <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);">Page Progress</span>
+      <span style="font-size:10px;color:var(--accent);letter-spacing:0.1em;">↑ Top bar</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill"></div>
+    </div>
+    <p style="font-size:11px;letter-spacing:0.06em;color:var(--text-dim);line-height:1.7;">The lime bar at the very top of the page and this track are both driven by <code style="color:var(--accent)">animation-timeline: scroll(root block)</code> — zero JavaScript.</p>
+  </div>
+  <div style="height:80vh"></div>
+</section>
+
+<!-- Section counter -->
+<div class="section-counter">CSS Scroll Animations — 11 demos</div>

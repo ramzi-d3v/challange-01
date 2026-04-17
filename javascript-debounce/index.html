@@ -1,0 +1,87 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="./style.css">
+<!-- Page header -->
+<div class="page-header">
+  <div class="header-left">
+    <span class="page-eyebrow">JS Performance</span>
+    <h1 class="page-title">De<span>bounce</span></h1>
+  </div>
+  <p class="page-desc">Three live demos showing how debounce limits how often a function can fire — search input, button cooldown, and window resize.</p>
+</div>
+
+<div class="sections">
+
+  <!-- ——— 01 Search ——— -->
+  <div class="section search-section">
+    <div class="sec-label-col">
+      <span class="sec-num">01</span>
+      <div class="sec-title-block">
+        <span class="sec-eyebrow">Input</span>
+        <span class="sec-title">Live<br />Search</span>
+      </div>
+    </div>
+    <div class="sec-content">
+      <div class="search-wrap">
+        <input type="text" id="search" placeholder="Type to search fruits…" autocomplete="off" />
+      </div>
+      <div class="debounce-bar-wrap">
+        <div class="debounce-bar" id="debounce-bar"></div>
+      </div>
+      <div class="results" id="results">
+        <span class="results-empty" id="results-empty">Results appear 500ms after you stop typing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ——— 02 Button ——— -->
+  <div class="section button-section">
+    <div class="sec-label-col">
+      <span class="sec-num">02</span>
+      <div class="sec-title-block">
+        <span class="sec-eyebrow">Click</span>
+        <span class="sec-title">Debounced<br />Button</span>
+      </div>
+    </div>
+    <div class="sec-content">
+      <div class="btn-wrap">
+        <button id="debounceBtn">Fire Action</button>
+        <div class="cooldown-track" id="cooldown-track">
+          <div class="cooldown-fill" id="cooldown-fill"></div>
+        </div>
+      </div>
+      <p id="message" class="empty">—</p>
+    </div>
+  </div>
+
+  <!-- ——— 03 Resize ——— -->
+  <div class="section resize-section">
+    <div class="sec-label-col">
+      <span class="sec-num">03</span>
+      <div class="sec-title-block">
+        <span class="sec-eyebrow">Window</span>
+        <span class="sec-title">Resize<br />Detect</span>
+      </div>
+    </div>
+    <div class="sec-content">
+      <div class="resize-display">
+        <div class="resize-metric">
+          <span class="resize-label">Width</span>
+          <span class="resize-value" id="resize-w">—</span>
+          <span class="resize-unit">px</span>
+        </div>
+        <div class="resize-sep"></div>
+        <div class="resize-metric">
+          <span class="resize-label">Height</span>
+          <span class="resize-value" id="resize-h">—</span>
+          <span class="resize-unit">px</span>
+        </div>
+      </div>
+      <div class="debounce-status">
+        <span class="debounce-status-dot" id="resize-dot"></span>
+        <span id="resize-status-text">Resize the window — fires 300ms after you stop</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</script><script  src="./script.js"></script>

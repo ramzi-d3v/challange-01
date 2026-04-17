@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="./style.css">
+<div class="page-wrapper">
+  <div class="eyebrow">CSS Only</div>
+  <h1>Modal<br /><span>Patterns</span></h1>
+  <p class="subtitle">Four interaction patterns. Zero JavaScript. Pure CSS :target magic.</p>
+
+  <div class="btn-container">
+    <a href="#modal1" class="btn">
+      Classic
+      <span class="btn-tag">01</span>
+    </a>
+    <a href="#modal2" class="btn">
+      Bottom Sheet
+      <span class="btn-tag">02</span>
+    </a>
+    <a href="#modal3" class="btn">
+      Fullscreen
+      <span class="btn-tag">03</span>
+    </a>
+    <a href="#modal4" class="btn">
+      Notification
+      <span class="btn-tag">04</span>
+    </a>
+  </div>
+</div>
+
+<!-- Modal 1: Classic -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <div class="modal-tag">01 — Classic</div>
+    <h2>Dark Glass</h2>
+    <p>Minimal dark card with corner accent marks and smooth entry animation. The go-to pattern for clean, focused interactions.</p>
+    <a href="#" class="close-btn">Close</a>
+  </div>
+</div>
+
+<!-- Modal 2: Bottom Sheet -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <div class="modal-tag">02 — Sheet</div>
+    <h2>Bottom Sheet</h2>
+    <div class="modal-divider"></div>
+    <p>Mobile-native pattern with accent stripe on entry. Slides up from the bottom edge with spring easing.</p>
+    <a href="#" class="close-btn">Dismiss</a>
+  </div>
+</div>
+
+<!-- Modal 3: Fullscreen -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <div class="fs-grid"></div>
+    <div class="fs-content">
+      <div class="modal-tag">03 — Full</div>
+      <h2>Immersive<br /><span>View</span></h2>
+      <p>Full-viewport takeover with grid overlay. Scale-in animation creates a dramatic sense of expansion. Best for media or focus moments.</p>
+      <a href="#" class="close-btn">Exit</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4: Notification -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <div class="toast-header">
+      <div class="toast-icon">✓</div>
+      <div class="modal-tag">Notification</div>
+    </div>
+    <h2>New Alert</h2>
+    <p>Toast-style card from top-right. Auto-progress bar counts down. Minimal dismiss interaction.</p>
+    <a href="#" class="close-btn">Dismiss</a>
+  </div>
+</div>

@@ -1,0 +1,402 @@
+:root {
+  --bg: #0a0a0a;
+  --border: rgba(240, 237, 230, 0.07);
+  --border-hi: rgba(240, 237, 230, 0.15);
+  --text: rgba(240, 237, 230, 0.9);
+  --text-dim: rgba(240, 237, 230, 0.38);
+  --accent: #c8ff00;
+  --fd: "Bebas Neue", sans-serif;
+  --fm: "DM Mono", monospace;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fm);
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* ——— Scroll container ——— */
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  position: relative;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ——— Sections ——— */
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+/* Grid bg per section */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Unique section backgrounds */
+#section1 {
+  background: #0a0a0a;
+}
+#section2 {
+  background: #080c0a;
+}
+#section3 {
+  background: #0c080a;
+}
+#section4 {
+  background: #08080e;
+}
+
+/* Large section-number bg watermark */
+.section-bg-num {
+  position: absolute;
+  font-family: var(--fd);
+  font-size: clamp(30vw, 40vw, 500px);
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.025);
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+  right: -0.05em;
+  bottom: -0.1em;
+  transition: color 0.6s;
+}
+.section.active .section-bg-num {
+  color: rgba(200, 255, 0, 0.04);
+}
+
+/* Accent colour per section (used on bg-num + active line) */
+#section1 .section-bg-num {
+  color: rgba(200, 255, 0, 0.03);
+}
+#section2 .section-bg-num {
+  color: rgba(125, 211, 252, 0.03);
+}
+#section3 .section-bg-num {
+  color: rgba(255, 150, 100, 0.03);
+}
+#section4 .section-bg-num {
+  color: rgba(167, 139, 250, 0.03);
+}
+
+/* Horizontal accent bar at bottom of each section */
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  z-index: 3;
+}
+
+/* ——— Content ——— */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 0 clamp(24px, 6vw, 80px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section.active .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Eyebrow */
+.content-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.5s 0.1s ease, transform 0.5s 0.1s ease;
+}
+.content-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.section.active .content-eyebrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Per-section eyebrow accent colour */
+#section2 .content-eyebrow {
+  color: #7dd3fc;
+}
+#section3 .content-eyebrow {
+  color: #fca5a5;
+}
+#section4 .content-eyebrow {
+  color: #a78bfa;
+}
+
+/* Headline */
+h1 {
+  font-family: var(--fd);
+  font-size: clamp(3.5rem, 9vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+#section2 h1 em {
+  color: #7dd3fc;
+}
+#section3 h1 em {
+  color: #fca5a5;
+}
+#section4 h1 em {
+  color: #a78bfa;
+}
+
+/* Body copy */
+p {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  line-height: 1.75;
+  max-width: 480px;
+}
+
+/* Divider */
+.content-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--border-hi);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: opacity 0.4s 0.2s ease,
+    transform 0.5s 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section.active .content-divider {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ——— Left section counter bar ——— */
+.section-counter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--border);
+  z-index: 3;
+  overflow: hidden;
+}
+.section-counter-fill {
+  width: 100%;
+  background: var(--accent);
+  height: 0%;
+  transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#section2 .section-counter-fill {
+  background: #7dd3fc;
+}
+#section3 .section-counter-fill {
+  background: #fca5a5;
+}
+#section4 .section-counter-fill {
+  background: #a78bfa;
+}
+.section.active .section-counter-fill {
+  height: 100%;
+}
+
+/* ——— Right navigation dots ——— */
+.scroll-indicator {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+.dot {
+  width: 3px;
+  height: 20px;
+  background: var(--border-hi);
+  cursor: pointer;
+  transition: background 0.3s, height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.dot::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.dot:hover::after {
+  opacity: 1;
+}
+.dot.active {
+  background: var(--accent);
+  height: 36px;
+}
+.dot[data-index="1"].active {
+  background: #7dd3fc;
+}
+.dot[data-index="2"].active {
+  background: #fca5a5;
+}
+.dot[data-index="3"].active {
+  background: #a78bfa;
+}
+
+/* ——— Top status bar ——— */
+.status-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(10, 10, 10, 0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.status-brand {
+  font-family: var(--fd);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+}
+.status-brand span {
+  color: var(--accent);
+}
+.status-info {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.status-info span {
+  color: var(--accent);
+}
+
+/* ——— Progress bar under status bar ——— */
+.page-progress {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--border);
+  z-index: 10;
+}
+.page-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 25%;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+}
+
+/* ——— Scroll hint (first section only) ——— */
+.scroll-hint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+.scroll-hint-text {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.scroll-hint-line {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollBob 1.8s ease-in-out infinite;
+}
+@keyframes scrollBob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 0.4;
+  }
+}
+#section1.active .scroll-hint {
+  opacity: 1;
+}
+#section2.active ~ * .scroll-hint,
+.section:not(#section1).active .scroll-hint {
+  opacity: 0;
+}

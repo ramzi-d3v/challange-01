@@ -1,0 +1,50 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="./style.css">
+<!-- Page header -->
+<div class="page-header">
+  <span class="page-eyebrow">JS Fundamentals</span>
+  <h1>Event<br /><span>Handling</span></h1>
+</div>
+
+<!-- Demo 1: Event Delegation -->
+<div class="container">
+  <div class="sec-bar">
+    <h2>Event Delegation</h2>
+    <span class="sec-badge">Dynamic Items</span>
+  </div>
+  <div class="sec-body">
+    <div id="item-container">
+      <div class="item">Initial Item 1</div>
+      <div class="item">Initial Item 2</div>
+    </div>
+    <button id="add-item">Add New Item</button>
+    <div class="status" id="item-status">Click any item to see event delegation in action</div>
+  </div>
+</div>
+
+<!-- Demo 2: Event Propagation -->
+<div class="container">
+  <div class="sec-bar">
+    <h2>Event Propagation</h2>
+    <span class="sec-badge">Bubbling & stopPropagation</span>
+  </div>
+  <div class="sec-body">
+    <div id="parent-div">
+      <button id="child-btn">Child Button — click me</button>
+    </div>
+    <div class="status" id="nested-status">Click the button or the parent area to observe bubbling</div>
+  </div>
+</div>
+
+<!-- Console log panel -->
+<div class="log-panel">
+  <div class="log-header">
+    <span class="log-title">Console Log</span>
+    <button class="log-clear" id="log-clear">Clear</button>
+  </div>
+  <div id="console-log">
+    <div class="log-empty" id="log-empty">Interact with the demos above to see logs here</div>
+  </div>
+
+</div>
+</script><script  src="./script.js"></script>

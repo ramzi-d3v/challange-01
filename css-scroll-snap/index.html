@@ -1,0 +1,88 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="./style.css">
+<!-- Status bar -->
+<div class="status-bar">
+  <span class="status-brand">CSS <span>Scroll</span> Snap</span>
+  <span class="status-info">Section <span id="section-counter">01</span> / 04</span>
+</div>
+<div class="page-progress">
+  <div class="page-progress-fill" id="page-progress-fill"></div>
+</div>
+
+<!-- Scroll container -->
+<div class="container" id="scrollContainer">
+
+  <!-- 01 -->
+  <div class="section" id="section1">
+    <div class="section-counter">
+      <div class="section-counter-fill"></div>
+    </div>
+    <div class="section-bg-num">01</div>
+    <div class="content">
+      <span class="content-eyebrow">Scroll Snap</span>
+      <div class="content-divider"></div>
+      <h1>Welcome to<br /><em>CSS Snap</em></h1>
+      <p>Experience smooth, locked scrolling with pixel-perfect section snapping. No libraries. Pure CSS.</p>
+    </div>
+    <div class="scroll-hint">
+      <span class="scroll-hint-text">Scroll down</span>
+      <div class="scroll-hint-line"></div>
+    </div>
+  </div>
+
+  <!-- 02 -->
+  <div class="section" id="section2">
+    <div class="section-counter">
+      <div class="section-counter-fill"></div>
+    </div>
+    <div class="section-bg-num">02</div>
+    <div class="content">
+      <span class="content-eyebrow">Navigation</span>
+      <div class="content-divider"></div>
+      <h1>Seamless<br /><em>Navigation</em></h1>
+      <p>Each section snaps precisely into the viewport. Controlled, intentional, effortless.</p>
+    </div>
+  </div>
+
+  <!-- 03 -->
+  <div class="section" id="section3">
+    <div class="section-counter">
+      <div class="section-counter-fill"></div>
+    </div>
+    <div class="section-bg-num">03</div>
+    <div class="content">
+      <span class="content-eyebrow">Intersection Observer</span>
+      <div class="content-divider"></div>
+      <h1>Content<br /><em>Reveals</em></h1>
+      <p>IntersectionObserver fires as each section enters the viewport, triggering staggered entrance transitions.</p>
+    </div>
+  </div>
+
+  <!-- 04 -->
+  <div class="section" id="section4">
+    <div class="section-counter">
+      <div class="section-counter-fill"></div>
+    </div>
+    <div class="section-bg-num">04</div>
+    <div class="content">
+      <span class="content-eyebrow">UI Elevation</span>
+      <div class="content-divider"></div>
+      <h1>Elevate<br /><em>Your UI</em></h1>
+      <p>Fluid, modern, engaging. Scroll snap turns basic page sections into a polished fullscreen experience.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Right nav dots -->
+<div class="scroll-indicator">
+  <div class="dot" data-index="0" data-label="Welcome"></div>
+  <div class="dot" data-index="1" data-label="Navigation"></div>
+  <div class="dot" data-index="2" data-label="Reveals"></div>
+  <div class="dot" data-index="3" data-label="Elevate"></div>
+</div>
+
+<script  src="./script.js"></script>
+</body>
+
+</html>

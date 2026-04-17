@@ -1,0 +1,40 @@
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="./style.css">
+
+<div class="page-wrap">
+
+  <!-- Header -->
+  <header class="page-heading">
+    <span class="page-eyebrow">CSS</span>
+    <h1>Container<br /><span>@Queries</span></h1>
+    <p class="subheading">Resize the card to see component-level layout adaptation</p>
+  </header>
+
+  <!-- Size controls -->
+  <div class="demo-controls">
+    <button onclick="resizeCard(event, 300)" class="active">Small</button>
+    <button onclick="resizeCard(event, 500)">Medium</button>
+    <button onclick="resizeCard(event, 820)">Large</button>
+  </div>
+
+  <!-- Card wrapper = the container -->
+  <article class="product-card-wrapper" id="productCard">
+    <div class="product-card">
+      <img src="https://www.ikea.com/in/en/images/products/markus-office-chair-vissle-light-grey__1101440_pe866425_s5.jpg" alt="Ergonomic Office Chair" class="product-image" />
+      <div class="product-content">
+        <span class="product-tag">Bestseller</span>
+        <div class="product-details">
+          <h2 class="product-title">Ergonomic Office Chair</h2>
+          <p class="product-description">Premium ergonomic chair with adjustable lumbar support, breathable mesh back, and 3D armrests. Perfect for home office or workplace.</p>
+          <p class="product-price">$299.99</p>
+          <div class="product-actions">
+            <button class="btn btn-primary">Add to Cart</button>
+            <button class="btn btn-secondary">Wishlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-width-badge" id="containerWidth">Width: 300px</div>
+  </article>
+</script><script  src="./script.js"></script>
+</div>

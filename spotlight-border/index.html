@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Border Glow Effect | CSS Spotlight</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <span class="brand-mark">RAMZi <span>ALI</span></span>
+    </div>
+    <nav class="links">
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Pricing</a>
+      <a href="#">Docs</a>
+    </nav>
+    <a class="nav-cta glow-border" href="#">Get Started</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-tag">CSS Spotlight Effect</div>
+          <h1>Border<br /><span>Glow</span><br />Only</h1>
+          <p>No interior glow. No tinted backgrounds. A masked pseudo-element draws a lit ring exactly where your cursor is — nothing more.</p>
+          <div class="hero-actions">
+            <a class="btn primary glow-border" href="#">Try Demo</a>
+            <a class="btn glow-border" href="#">View Code</a>
+          </div>
+        </div>
+        <div class="hero-visual glow-border">
+          <div class="hero-visual-text">GLOW</div>
+          <div class="visual-cards">
+            <div class="v-card glow-border"></div>
+            <div class="v-card glow-border"></div>
+            <div class="v-card glow-border"></div>
+            <div class="v-card glow-border"></div>
+            <div class="v-card glow-border"></div>
+            <div class="v-card glow-border"></div>
+          </div>
+          <div style="position:absolute;bottom:12px;right:12px;">
+            <span class="hero-visual-label">move mouse here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature grid -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Feature Grid</span>
+        <h2>Nine cards, <span>one class</span></h2>
+        <p class="lead">Add <code style="color:var(--accent)">.glow-border</code> to any element. The spotlight follows your cursor via CSS custom properties — single RAF loop, no layout thrash.</p>
+      </div>
+      <ul class="grid" role="list">
+        <li class="card glow-border">
+          <h3>Analytics</h3>
+          <p>Track interactions with zero JS libs.</p>
+          <span class="num">01</span>
+        </li>
+        <li class="card glow-border">
+          <h3>Performance</h3>
+          <p>Single RAF + CSS custom properties.</p>
+          <span class="num">02</span>
+        </li>
+        <li class="card glow-border">
+          <h3>Design</h3>
+          <p>Sharp or rounded corners — inherits border-radius.</p>
+          <span class="num">03</span>
+        </li>
+        <li class="card glow-border">
+          <h3>Theming</h3>
+          <p>Change hue, radius, border-width via CSS vars.</p>
+          <span class="num">04</span>
+        </li>
+        <li class="card glow-border">
+          <h3>Accessible</h3>
+          <p>Respects prefers-reduced-motion.</p>
+          <span class="num">05</span>
+        </li>
+        <li class="card glow-border">
+          <h3>Portable</h3>
+          <p>Drop a single class into any layout.</p>
+          <span class="num">06</span>
+        </li>
+        <li class="card glow-border">
+          <h3>GPU-Friendly</h3>
+          <p>background-attachment: fixed avoids repaints.</p>
+          <span class="num">07</span>
+        </li>
+        <li class="card glow-border">
+          <h3>No Tint</h3>
+          <p>Mask punch-out means content never brightens.</p>
+          <span class="num">08</span>
+        </li>
+        <li class="card glow-border">
+          <h3>Clean API</h3>
+          <p>One class name = border glow. Done.</p>
+          <span class="num">09</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="tech-section">
+    <div class="container">
+      <div class="tech-card glow-border">
+        <span class="tech-label">CSS</span>
+        <div class="tech-content">
+          <div class="tech-title">How the mask works</div>
+          <p class="tech-desc">A <code style="color:var(--accent)">::before</code> pseudo-element fills with a viewport-fixed radial gradient tracking <code style="color:var(--accent)">--mx</code> / <code style="color:var(--accent)">--my</code>. A CSS mask with <code style="color:var(--accent)">mask-composite: exclude</code> punches out the interior, leaving only the border ring lit up.</p>
+          <div class="tech-code">--spot-hsl: 74 100% 50%; &nbsp;/* lime */<br />--spot-fade: 20vmin; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* falloff radius */<br />--bw: 2px; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* ring thickness */</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Link to JavaScript file (placed at end of body for better performance) -->
+<script src="script.js"></script>
+
+</body>
+</html>
